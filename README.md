@@ -1,73 +1,119 @@
-# Welcome to your Lovable project
+# Digital Marketplace for Byproduct Management ♻️
 
-## Project info
+An AI-powered digital marketplace that connects buyers and sellers of industrial byproducts and recyclable materials, promoting material reuse, recycling, and sustainable waste management.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 📌 Project Overview
 
-## How can I edit this code?
+The platform combines a digital marketplace with Artificial Intelligence and Machine Learning to help users identify waste materials, discover relevant byproduct advertisements, and receive intelligent recycling guidance.
 
-There are several ways of editing your application.
+The system integrates:
 
-**Use Lovable**
+- Deep Learning for waste image classification
+- LightGBM for advertisement recommendations
+- RAG (Retrieval-Augmented Generation) for recycling knowledge retrieval
+- Llama LLM for generating structured material insights
+- Buyer–seller communication
+- JWT-based authentication
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🤖 AI & Machine Learning Components
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. Waste Image Classification
 
-**Use your preferred IDE**
+When a seller uploads an image of a waste material, the image is processed by the ML API and classified into categories such as:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Plastic
+- Paper
+- Glass
+- Metal
+- Cardboard
+- Trash
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Multiple deep learning models were evaluated, including:
 
-Follow these steps:
+- ResNet50
+- EfficientNet
+- MobileNetV2
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Based on the performance obtained on the project dataset, **MobileNetV2** was selected for waste classification.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 2. Recommendation System
 
-# Step 3: Install the necessary dependencies.
-npm i
+The platform uses **LightGBM** to recommend relevant advertisements to users.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Recommendations are based on factors such as:
 
-**Edit a file directly in GitHub**
+- User search behaviour
+- Product/material category matching
+- Advertisement relevance
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. RAG + Llama
 
-**Use GitHub Codespaces**
+The system provides intelligent recycling guidance using **Retrieval-Augmented Generation (RAG)** integrated with a Llama-based Large Language Model.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+After identifying the waste material:
 
-## What technologies are used for this project?
+1. The system identifies the material category.
+2. RAG retrieves relevant information from a local knowledge base.
+3. Retrieved information may include recycling methods, industries using the material, market price information, eco-friendly tips, and government guidelines.
+4. The Llama model generates structured and user-friendly material insights.
 
-This project is built with:
+## ♻️ Recycling Information
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The system can provide information such as:
 
-## How can I deploy this project?
+- Material description
+- Recycling steps
+- Industries using the material
+- Approximate market price
+- Eco-friendly disposal tips
+- Government guidelines and regulations
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 🛒 Marketplace
 
-## Can I connect a custom domain to my Lovable project?
+The application provides a marketplace where buyers and sellers can interact around recyclable and industrial byproduct materials.
 
-Yes, you can!
+### Key Features
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Seller advertisement creation
+- Product/byproduct listings
+- Waste material identification
+- AI-powered recommendations
+- Recycling information
+- Buyer–seller messaging
+- User authentication
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🏗️ Technology Stack
+
+| Technology | Purpose |
+|------------|---------|
+| React | Frontend |
+| Node.js | Backend |
+| Express.js | Backend API |
+| MongoDB | Database |
+| Flask | Machine Learning API |
+| MobileNetV2 | Waste image classification |
+| LightGBM | Recommendation system |
+| RAG | Knowledge retrieval |
+| Llama | Natural language generation |
+| JWT | Authentication |
+
+## 🔄 AI Pipeline
+
+
+Waste Image
+     ↓
+MobileNetV2
+     ↓
+Material Classification
+     ↓
+ ┌───────────────┬──────────────────┐
+ ↓               ↓                  ↓
+RAG          LightGBM          Marketplace
+ ↓               ↓
+Knowledge     Advertisement
+Retrieval     Recommendation
+ ↓
+Llama LLM
+ ↓
+Structured Material
+Insights
