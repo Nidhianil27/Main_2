@@ -115,5 +115,14 @@ Retrieval     Recommendation
  ↓
 Llama LLM
  ↓
+
+
+
+👩‍💻 My Contribution
+Evaluated different deep learning models for waste image classification, including ResNet50, EfficientNet, and MobileNetV2.
+Compared model performance on the project dataset and helped select MobileNetV2 based on its classification performance.
+Studied and understood the AI/ML pipeline, from waste image input to material classification and subsequent recommendations.
+Participated in testing and integration of the machine learning components with the application.
+Contributed to understanding and integrating the AI-based features, including the RAG and recommendation components.
 Structured Material
 Insights
